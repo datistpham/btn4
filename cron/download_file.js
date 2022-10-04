@@ -16,12 +16,13 @@ export default async function simplefileDownload() {
     await fakesleep(25000)
     await page.select("#ScanExchange", "All")
     await page.select("#quote", "BTC")
-    await page.click(".buttons-excel")
     await page.click("#ScanSub")
+    await page.click(".buttons-excel")
+    await fakesleep(1000)
     await page.select("#ScanExchange", "All")
     await page.select("#quote", "ETH")
-    await page.click(".buttons-excel")
     await page.click("#ScanSub")
+    await page.click(".buttons-excel")
     await fakesleep(3000) // wait for download btc and eth
     excel_to_json()
     setInterval(async ()=> {
@@ -29,6 +30,7 @@ export default async function simplefileDownload() {
         await page.select("#quote", "BTC")
         await page.click("#ScanSub")
         await page.click(".buttons-excel")
+        await fakesleep(1000)
         await page.select("#ScanExchange", "All")
         await page.select("#quote", "ETH")
         await page.click("#ScanSub")

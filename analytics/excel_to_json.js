@@ -35,6 +35,7 @@ export default function excel_to_json() {
         const newa2= {exchange, symbol, bought, sold, total_trade, diff}
         newArr2.push(newa2)
     })
+    
     dbconnection.collection("data_btn4").insertMany(newArr.concat(newArr2), async function(err, result) {
         if(err) throw err
         else {
