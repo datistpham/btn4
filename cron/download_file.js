@@ -18,9 +18,14 @@ export default async function simplefileDownload() {
     await page.select("#quote", "BTC")
     await page.click("#ScanSub")
     await page.click(".buttons-excel")
-    await fakesleep(1000)
+    await fakesleep(1500)
     await page.select("#ScanExchange", "All")
     await page.select("#quote", "ETH")
+    await page.click("#ScanSub")
+    await page.click(".buttons-excel")
+    await fakesleep(1500)
+    await page.select("#ScanExchange", "All")
+    await page.select("#quote", "USDT")
     await page.click("#ScanSub")
     await page.click(".buttons-excel")
     await fakesleep(3000) // wait for download btc and eth
@@ -30,14 +35,19 @@ export default async function simplefileDownload() {
         await page.select("#quote", "BTC")
         await page.click("#ScanSub")
         await page.click(".buttons-excel")
-        await fakesleep(1000)
+        await fakesleep(1500)
         await page.select("#ScanExchange", "All")
         await page.select("#quote", "ETH")
         await page.click("#ScanSub")
         await page.click(".buttons-excel")
+        await fakesleep(1500)
+        await page.select("#ScanExchange", "All")
+        await page.select("#quote", "USDT")
+        await page.click("#ScanSub")
+        await page.click(".buttons-excel")
         await fakesleep(3000) // wait for download btc and eth
         excel_to_json()
-    }, 10000)
+    }, 15000)
     
 }
 
